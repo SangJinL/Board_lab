@@ -19,7 +19,11 @@ public class Board extends BaseEntitiy{
     private String title;
     private String content;
 
-    @ManyToOne
+
+//즉각 로딩 방식은 기본 설정 무조건 모든 관계에 대해 Join을 하기 때문에
+//불필요한 조인이 발생한다.
+//데이터의 양이 많을 시 즉각 로딩 방식을 사용했을때 실행시간이 오래 걸린다.
+    @ManyToOne(fetch = FetchType.LAZY) //지연(LAZY) 로딩 방식 설정
     private Member writer;
     // 실제 board 테이블에는 writer_email 컬럼이 생성 되고 FK(Member 테이블의 email값만 참조 하기 위해)가 생성됨
 }
