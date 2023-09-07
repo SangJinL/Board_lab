@@ -75,4 +75,14 @@ public class BoardRepositoryTests {
             Object[] arr = (Object[]) row;
         });
     }
+
+    @Test
+    public void testRead3(){
+        Object result = boardRepository.getBoardByBno(100L);
+        Object[] arr = (Object[]) result;
+        for (Object a : arr)
+            System.out.println(a);
+
+
+    }
 }
