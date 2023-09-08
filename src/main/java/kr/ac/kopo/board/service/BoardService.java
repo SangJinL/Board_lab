@@ -8,8 +8,11 @@ import kr.ac.kopo.board.entity.Member;
 
 public interface BoardService {
     Long register(BoardDTO dto); // 게시글 등록 처리 할 때
-
     PageResultDTO<BoardDTO, Object[]> getList(PageRequestDTO pageRequestDTO); // 게시글 목록 처리 할 때
+    BoardDTO get(Long bno);// 글 조회기능 선언
+    void removeWithReplies(Long bno); // 댓글 삭제 후 원글 삭제
+    void modify(BoardDTO boardDTO);
+
 
     // DTO => Entity 변환
     default Board dtoToEntity(BoardDTO dto){
