@@ -40,7 +40,7 @@
            <tbody>
            <tr th:each="dto : ${result.dtoList}">
                <th scope="row">
-                   <a th:href="@{/board/read(gno=${dto.bno}, page=${result.page}, size=${result.size}, type=${pageRequestDTO.type}, keyword=${pageRequestDTO.keyword})}">
+                   <a th:href="@{/board/read(bno=${dto.bno}, page=${result.page}, size=${result.size}, type=${pageRequestDTO.type}, keyword=${pageRequestDTO.keyword})}">
                        [[${dto.bno}]]
                    </a>
                </th>
