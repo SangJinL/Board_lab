@@ -1,4 +1,4 @@
-package kr.ac.kopo.board.BoardController;
+package kr.ac.kopo.board.Controller;
 
 import kr.ac.kopo.board.dto.BoardDTO;
 import kr.ac.kopo.board.dto.PageRequestDTO;

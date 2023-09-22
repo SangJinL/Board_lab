@@ -52,7 +52,7 @@ public class SearchBoardRepositoryImpl
         return null;
     }
     @Override
-    public Page<Object[]> seachPage(String type, String keyword, Pageable pageable){
+    public Page<Object[]> searchPage(String type, String keyword, Pageable pageable){
         log.info("searchPage() 호출_________________");
         QBoard board = QBoard.board;
         QMember member = QMember.member;
@@ -98,7 +98,7 @@ public class SearchBoardRepositoryImpl
             tuple.orderBy(new OrderSpecifier(direction, orderByExpression));
         });
         tuple.offset(pageable.getOffset());
-        tuple.limit(pageable.getPageNumber());
+        tuple.limit(pageable.getPageSize());
         tuple.groupBy(board);
         List<Tuple> result = tuple.fetch();
         for (Tuple t: result)
