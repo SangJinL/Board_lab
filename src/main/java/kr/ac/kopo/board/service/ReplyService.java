@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface ReplyService {
     // 댓글 등록
-    long register(ReplyDTO replyDTO);
+    Long register(ReplyDTO replyDTO);
     // 댓글 목록
     List<ReplyDTO> getList(Long bno);
     // 댓글 수정
@@ -40,4 +40,7 @@ public interface ReplyService {
                 .build();
         return dto;
     }
+
+
+
 }

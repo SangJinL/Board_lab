@@ -22,20 +22,21 @@ public class BoardController {
 
     @GetMapping("/list")
     public void list(PageRequestDTO pageRequestDTO, Model model){
-        log.info("list.........." + pageRequestDTO);
+        log.info("list........." + pageRequestDTO);
         model.addAttribute("result", boardService.getList(pageRequestDTO));
+
     }
 
-    @GetMapping("/register")
+    @GetMapping("register")
     public void register(){
         log.info("register get...");
     }
 
     @PostMapping("/register")
     public String registerPost(BoardDTO dto, RedirectAttributes redirectAttributes){
-        log.info("BoardDTO:" +dto);
+        log.info("BoardDTO: "+dto);
         Long bno = boardService.register(dto);
-        log.info("BNO: " +bno);
+        log.info("BNO: "+bno);
         redirectAttributes.addFlashAttribute("msg", bno);
         return "redirect:/board/list";
     }
